@@ -1,0 +1,18 @@
+class Person {
+
+    private final int age;
+
+    Person(int age) {
+
+        if (age < 0)
+            throw new IllegalArgumentException("age less than zero: " + age);
+
+        this.age = age;
+    }
+    public static void main (String args[]){
+
+        Person billy = new Person(14);
+        Person emily = new Person(-2);
+        
+    }
+}
