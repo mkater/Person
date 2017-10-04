@@ -2,17 +2,20 @@ class Person {
 
     private final int age;
 
-    Person(int age) {
-
+    Person(int age) throws IllegalArgumentException {
         if (age < 0)
-            throw new IllegalArgumentException("age less than zero: " + age);
+            throw new IllegalArgumentException();
 
         this.age = age;
     }
     public static void main (String args[]){
 
-        Person billy = new Person(14);
-        Person emily = new Person(-2);
-        
+        try {
+            Person emily = new Person(-2);
+        }
+        catch(IllegalArgumentException e)
+        {
+            System.out.println("age less than zero");
+        }
     }
 }
